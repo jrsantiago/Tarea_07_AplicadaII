@@ -16,15 +16,9 @@ namespace VentanaGzWeb.Consultas
     public partial class ConsultaUsuario : System.Web.UI.Page
     {
         Usuario usu = new Usuario();
-
-      
-
+   
         protected void Page_Load(object sender, EventArgs e)
-        { /*DbVentana cone = new DbVentana();*/
-        //    DataSet ds = GetData();
-           
-        //    Repeater1.DataSource = ds;
-        //    Repeater1.DataBind();
+        { 
 
         }
         public int convertirId()

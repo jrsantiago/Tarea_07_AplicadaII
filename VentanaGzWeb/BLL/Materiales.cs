@@ -109,21 +109,10 @@ namespace BLL
             if (!Orden.Equals(""))
                 OrdenFinal = "Orden by" + Orden;
 
-            return cone.ObtenerDatos("Select " + Campos + " from Materiales where " + Condicion + " ");
+            return cone.ObtenerDatos("Select " + Campos + " from Materiales " + Condicion + " ");
 
         }
-        public DataTable ListadoTotal(string Campos, string Condicion, string Orden)
-        {
-            DbVentana cone = new DbVentana();
-
-            string OrdenFinal = "";
-            if (!Orden.Equals(""))
-                OrdenFinal = "Orden by" + Orden;
-
-            return cone.ObtenerDatos("Select " + Campos + " from Materiales as M inner join TotalMateriales T on M.IdMaterial = T.IdMaterial where " + Condicion + Orden);
-        }
-
-
+    
 
 
     }

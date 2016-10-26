@@ -81,6 +81,7 @@
     <Content Include="js\jquery-3.1.1.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="log.aspx" />
+    <Content Include="Registros\ReCliente.aspx" />
     <Content Include="Registros\ReMateriales.aspx" />
     <Content Include="Registros\ReUsuario.aspx" />
     <Content Include="packages.config" />
@@ -137,6 +138,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\ReCliente.aspx.cs">
+      <DependentUpon>ReCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\ReCliente.aspx.designer.cs">
+      <DependentUpon>ReCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registros\ReMateriales.aspx.cs">
       <DependentUpon>ReMateriales.aspx</DependentUpon>

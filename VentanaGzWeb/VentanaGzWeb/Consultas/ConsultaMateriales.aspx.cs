@@ -22,7 +22,7 @@ namespace VentanaGzWeb.Consultas
         {
       
 
-           MaterialesGridView.DataSource= mate.Listado("*"," IdMaterial="+ BuscarTextBox.Text," --");
+           MaterialesGridView.DataSource= mate.Listado("*"," where IdMaterial="+ BuscarTextBox.Text," --");
             MaterialesGridView.DataBind();
         }
 
@@ -31,15 +31,16 @@ namespace VentanaGzWeb.Consultas
 
             MaterialesReportViewer.LocalReport.DataSources.Clear();
             MaterialesReportViewer.ProcessingMode = ProcessingMode.Local;
+            
 
             MaterialesReportViewer.LocalReport.ReportPath = @"Reportes\MaterialesReport.rdlc";
 
-            ReportDataSource source = new ReportDataSource("MaterialesDataSet", mate.ListadoTotal("M.IdMaterial,M.Detalle,M.Unidad,M.Cantidad,M.Precio,M.Total", " M.IdMaterial= " + BuscarTextBox.Text, " GROUP BY M.IdMaterial, M.Detalle,M.Unidad,M.Cantidad,M.Precio,M.Total"));
+            ReportDataSource source = new ReportDataSource("MaterialesDataSet", mate.Listado("*", " " ,"--"));
 
             MaterialesReportViewer.LocalReport.DataSources.Add(source);
             MaterialesReportViewer.LocalReport.Refresh();
 
-           // mate.ListadoTotal("M.Detalle,M.Unidad,M.Cantidad,M.Precio,Sum(T.Total)", " M.IdMaterial= " + BuscarTextBox.Text, " --"));
+        
         }
     }
 }
